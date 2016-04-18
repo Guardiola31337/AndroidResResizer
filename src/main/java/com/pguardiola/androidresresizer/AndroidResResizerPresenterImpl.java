@@ -16,13 +16,9 @@
 
 package com.pguardiola.androidresresizer;
 
-import java.io.IOException;
-import org.im4java.core.ConvertCmd;
-import org.im4java.core.IM4JavaException;
-import org.im4java.core.IMOperation;
-
 public class AndroidResResizerPresenterImpl implements AndroidResResizerPresenter {
     private final Popup popup;
+    private Resizer resizer;
 
     public AndroidResResizerPresenterImpl(Popup popup) {
         this.popup = popup;
@@ -35,13 +31,14 @@ public class AndroidResResizerPresenterImpl implements AndroidResResizerPresente
 
     @Override
     public void onResizeClicked(ParamsDTO params) {
-        String path = params.getPath();
-        String baseDensity = params.getBaseDensity();
+        String image = params.getPath();
+        String density = params.getBaseDensity();
 
-        System.out.println("File path:" + path);
-        System.out.println("Base density:" + baseDensity);
+        System.out.println("File path:" + image);
+        System.out.println("Base density:" + density);
 
-        executeResize(path);
+        Resizer resizer = obtainResizer();
+        resizer.resize(image);
 
         popup.close();
     }
@@ -53,29 +50,11 @@ public class AndroidResResizerPresenterImpl implements AndroidResResizerPresente
         popup.refresh();
     }
 
-    private void executeResize(String resource) {
-        String myPath = "/usr/local/bin";
-
-        ConvertCmd cmd = new ConvertCmd();
-        cmd.setSearchPath(myPath);
-
-        // create the operation, add images and operators/options
-        IMOperation op = new IMOperation();
-        op.addImage(resource);
-        op.filter("Cubic");
-        op.set("option:filter:blur").addRawArgs("0.5");
-        op.resize().addRawArgs("23%");
-        op.addImage("/Users/soporte/IdeaProjects/AndroidResResizer/foo_small_xxhdpi.jpg");
-
-        // execute the operation
-        try {
-            cmd.run(op);
-        } catch (IOException io) {
-            io.printStackTrace();
-        } catch (InterruptedException interrupted) {
-            interrupted.printStackTrace();
-        } catch (IM4JavaException im4java) {
-            im4java.printStackTrace();
+    private Resizer obtainResizer() {
+        if (resizer == null) {
+            resizer = new Resizer();
         }
+
+        return resizer;
     }
 }
