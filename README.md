@@ -19,7 +19,7 @@ Installation
 Download and install **Android Res Resources** directly from IntelliJ / Android Studio:
 `Preferences/Settings->Plugins->Browse Repositories`
 
-Alternatively, you can [download the plugin][] from the JetBrains plugin site and install it manually in:
+Alternatively, you can [download the plugin][5] from the JetBrains plugin site and install it manually in:
 `Preferences/Settings->Plugins->Install plugin from disk`.
 
 Build the project
@@ -73,3 +73,4 @@ License
 [2]: https://github.com/junit-team/junit
 [3]: https://github.com/mockito/mockito
 [4]: https://github.com/rromane
+[5]:
