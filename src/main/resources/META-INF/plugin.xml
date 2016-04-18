@@ -1,0 +1,41 @@
+<idea-plugin version="2">
+  <id>com.pguardiola.androidresresizer</id>
+  <name>Android Res Resizer</name>
+  <version>0.0.1</version>
+  <vendor email="guardiola31337 at gmail dot com" url="http://www.pguardiola.com">
+    Pablo Guardiola
+  </vendor>
+
+  <description><![CDATA[
+      Resizer for Android image resources
+    ]]></description>
+
+  <change-notes><![CDATA[
+      1.0: Initial version.
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="AndroidResResizer"
+            class="com.pguardiola.androidresresizer.action.AndroidResResizerAction"
+            text="AndroidResResizer"
+            description="Resizer for Android image resources."
+            icon="/icons/android_res_resizer_icon.png">
+      <add-to-group group-id="MainToolBar" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
