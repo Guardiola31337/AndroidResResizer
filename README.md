@@ -1,5 +1,6 @@
 Android Res Resizer - IntelliJ/Android Studio Plugin
-======================================================
+====================================================
+[![Build Status](https://travis-ci.org/Guardiola31337/AndroidResResizer.svg?branch=master)](https://travis-ci.org/Guardiola31337/AndroidResResizer)
 
 **IntelliJ and Android Studio plugin** created to **generate Android drawables** (ldpi, mdpi, hdpi, xhdpi, etc.) **from a given resource**.
 
