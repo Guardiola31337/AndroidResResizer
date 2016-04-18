@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.pguardiola.androidresresizer</id>
   <name>Android Res Resizer</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <vendor email="guardiola31337 at gmail dot com" url="http://www.pguardiola.com">
     Pablo Guardiola
   </vendor>
